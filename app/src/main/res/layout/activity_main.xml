@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        tools:ignore="MissingConstraints">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+
+            <WebView
+                android:id="@+id/webview"
+                android:layout_width="315dp"
+                android:layout_height="220dp"
+                android:gravity="center"
+                tools:ignore="MissingConstraints,WebViewLayout" />
+
+            <Button
+                android:id="@+id/popupbtn"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="pop up"></Button>
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/banner"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:orientation="horizontal"
+            tools:ignore="MissingConstraints">
+
+            <WebView
+                android:id="@+id/bannerad"
+                android:layout_width="213.34dp"
+                android:layout_height="120dp"
+                android:gravity="center"
+                tools:ignore="MissingConstraints,WebViewLayout" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Amid ongoing Real Madrid links, Kylian Mbappe confirms plans for next season"
+                android:textAlignment="center"></TextView>
+        </LinearLayout>
+        -
+    </RelativeLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>
