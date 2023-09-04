@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Fconnect Test</string>
+    <string name="app_name">Fconnect Demo</string>
     <string name="title_activity_main2">MainActivity2</string>
     <string name="title_home">Home</string>
     <string name="title_dashboard">Dashboard</string>
