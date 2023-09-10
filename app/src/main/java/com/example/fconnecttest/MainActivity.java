@@ -2,30 +2,64 @@ package com.example.fconnecttest;
 
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 
+import com.example.fconnecttest.databinding.ActivityMainBinding;
+
 
 public class MainActivity extends AppCompatActivity {
 
+    ActivityMainBinding binding;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        binding =ActivityMainBinding.inflate(getLayoutInflater());
+        setContentView(binding.getRoot());
+        replaceFragment(new AnchorFragment());
 
-        WebView myWebView1 = (WebView) findViewById(R.id.webview1);
-        myWebView1.getSettings().setJavaScriptEnabled(true);
-        myWebView1.clearCache(true);
-        myWebView1.getSettings().setDomStorageEnabled(true);
-        myWebView1.loadUrl("https://the-news-desk.com/displaytagVideo.html?p_key=HR2210JSY001&utm_medium=index&utm_source=HR2210JSY001");
+        String Anchor = String.valueOf(R.id.Anchor);
+        String In_Content = String.valueOf(R.id.In_Content);
+        String Native = String.valueOf(R.id.Native);
 
-        WebView myWebView2 = (WebView) findViewById(R.id.webview2);
-        myWebView2.getSettings().setJavaScriptEnabled(true);
-        myWebView2.clearCache(true);
-        myWebView2.getSettings().setDomStorageEnabled(true);
-        myWebView2.loadUrl("https://embed.footylight.com/fconnect-widget_v2/fl-av-player.html");
+        binding.navigationView.setOnItemSelectedListener(item -> {
+//            switch (item.getItemId()){
+//                case Anchor:
+//                    replaceFragment(new AnchorFragment());
+//                   break;
+//                case R.id.In_Content:
+//                    replaceFragment(new InContentFragment());
+//                    break;
+//                case R.id.Native:
+//                    replaceFragment(new NativeFragment());
+//                    break;
+//                default:
+//                    throw new IllegalStateException("Unexpected value: " + item.getItemId());
+//            }
+            if(item.getItemId()==R.id.Anchor){
+                replaceFragment(new AnchorFragment());
+            } else if (item.getItemId()==R.id.In_Content) {
+                replaceFragment(new InContentFragment());
+            }else if (item.getItemId()==R.id.Native) {
+                replaceFragment(new NativeFragment());
+            }
+            return true;
+        });
+
+
+
+    }
+
+    private void replaceFragment(Fragment fragment){
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.frame_layout,fragment);
+        fragmentTransaction.commit();
 
     }
 }
