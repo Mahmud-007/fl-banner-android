@@ -7,6 +7,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.webkit.WebView;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -59,6 +60,12 @@ public class InContentFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_in_content, container, false);
+        View view = inflater.inflate(R.layout.fragment_in_content, container, false);
+        WebView myWebView2 = view.findViewById(R.id.in_content_webview);
+        myWebView2.getSettings().setJavaScriptEnabled(true);
+        myWebView2.clearCache(true);
+        myWebView2.getSettings().setDomStorageEnabled(true);
+        myWebView2.loadUrl("https://embed.footylight.com/fconnect-widget_v2/feature-updates.html");
+        return view;
     }
 }

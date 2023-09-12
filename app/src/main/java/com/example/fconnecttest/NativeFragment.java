@@ -66,6 +66,12 @@ public class NativeFragment extends Fragment {
         myWebView2.clearCache(true);
         myWebView2.getSettings().setDomStorageEnabled(true);
         myWebView2.loadUrl("https://embed.footylight.com/eyecon-test/index.html");
+
+        WebView fconnectView = view.findViewById(R.id.fconnect_webview);
+        fconnectView.getSettings().setJavaScriptEnabled(true);
+        fconnectView.clearCache(true);
+        fconnectView.getSettings().setDomStorageEnabled(true);
+        fconnectView.loadUrl("https://fconnect.io/");
         return view;
     }
 }
