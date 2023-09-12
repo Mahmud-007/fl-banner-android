@@ -5,6 +5,7 @@ import android.os.Bundle;
 import androidx.fragment.app.Fragment;
 
 import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
 import android.webkit.WebView;
@@ -76,6 +77,12 @@ public class AnchorFragment extends Fragment {
         myWebView2.clearCache(true);
         myWebView2.getSettings().setDomStorageEnabled(true);
         myWebView2.loadUrl("https://embed.footylight.com/fconnect-widget_v2/fl-av-player.html");
+        myWebView2.setOnTouchListener(new View.OnTouchListener() {
+            public boolean onTouch(View v, MotionEvent event)
+            {
+                return (event.getAction() == MotionEvent.ACTION_MOVE);
+            }
+        });
         return view;
     }
 }
