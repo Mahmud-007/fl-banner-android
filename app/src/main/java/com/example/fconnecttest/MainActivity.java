@@ -23,24 +23,8 @@ public class MainActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         replaceFragment(new AnchorFragment());
 
-        String Anchor = String.valueOf(R.id.Anchor);
-        String In_Content = String.valueOf(R.id.In_Content);
-        String Native = String.valueOf(R.id.Native);
 
         binding.navigationView.setOnItemSelectedListener(item -> {
-//            switch (item.getItemId()){
-//                case Anchor:
-//                    replaceFragment(new AnchorFragment());
-//                   break;
-//                case R.id.In_Content:
-//                    replaceFragment(new InContentFragment());
-//                    break;
-//                case R.id.Native:
-//                    replaceFragment(new NativeFragment());
-//                    break;
-//                default:
-//                    throw new IllegalStateException("Unexpected value: " + item.getItemId());
-//            }
             if(item.getItemId()==R.id.Anchor){
                 replaceFragment(new AnchorFragment());
             } else if (item.getItemId()==R.id.In_Content) {
@@ -50,9 +34,6 @@ public class MainActivity extends AppCompatActivity {
             }
             return true;
         });
-
-
-
     }
 
     private void replaceFragment(Fragment fragment){

@@ -55,10 +55,7 @@ public class AnchorFragment extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
-
     }
-
-
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -70,7 +67,7 @@ public class AnchorFragment extends Fragment {
         myWebView1.getSettings().setJavaScriptEnabled(true);
         myWebView1.clearCache(true);
         myWebView1.getSettings().setDomStorageEnabled(true);
-        myWebView1.loadUrl("https://edition.cnn.com/2023/09/09/entertainment/summer-over-hollywood-plc/index.html");
+        myWebView1.loadUrl("https://www.bbc.com/news/world-us-canada-66779228");
 
         WebView myWebView2 = view.findViewById(R.id.webview2);
         myWebView2.getSettings().setJavaScriptEnabled(true);

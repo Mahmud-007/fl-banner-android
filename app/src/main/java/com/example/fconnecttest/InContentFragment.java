@@ -65,7 +65,7 @@ public class InContentFragment extends Fragment {
         myWebView2.getSettings().setJavaScriptEnabled(true);
         myWebView2.clearCache(true);
         myWebView2.getSettings().setDomStorageEnabled(true);
-        myWebView2.loadUrl("https://embed.footylight.com/fconnect-widget_v2/feature-updates.html");
+        myWebView2.loadUrl("https://www.101greatgoals.com/news/chelsea-man-sees-potential-transfer-blocked-after-mauricio-pochettino-u-turn/");
         return view;
     }
 }
